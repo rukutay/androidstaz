@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary": "#7d5630", "on-secondary-container": "#7a532e", "on-tertiary-fixed-variant": "#4b463d", "on-primary-fixed-variant": "#653d1e", "on-surface": "#1c1b1b", "surface-variant": "#e5e2e1", "outline": "#83746b", "inverse-surface": "#313030", "secondary-fixed": "#ffdcbf", "on-error": "#ffffff", "secondary-container": "#ffca9b", "tertiary-fixed-dim": "#cdc6b9", "inverse-on-surface": "#f3f0ef", "on-secondary-fixed": "#2d1600", "on-surface-variant": "#51443c", "tertiary": "#544f46", "on-tertiary-container": "#efe7da", "surface-container-high": "#eae7e7", "surface-tint": "#805533", "on-tertiary-fixed": "#1e1b13", "surface-container-highest": "#e5e2e1", "surface-container": "#f0eded", "primary-container": "#8b5e3c", "surface-container-low": "#f6f3f2", "tertiary-container": "#6c675d", "primary-fixed": "#ffdcc5", "on-secondary-fixed-variant": "#623f1b", "on-tertiary": "#ffffff", "error": "#ba1a1a", "on-error-container": "#93000a", "error-container": "#ffdad6", "on-secondary": "#ffffff", "surface-dim": "#dcd9d9", "primary-fixed-dim": "#f4bb92", "on-primary": "#ffffff", "surface-bright": "#fcf9f8", "on-primary-fixed": "#301400", "surface": "#fcf9f8", "outline-variant": "#d5c3b8", "on-primary-container": "#ffe3d1", "on-background": "#1c1b1b", "primary": "#6f4627", "tertiary-fixed": "#e9e2d5", "background": "#fcf9f8", "surface-container-lowest": "#ffffff", "secondary-fixed-dim": "#f0bd8f", "inverse-primary": "#f4bb92" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "space-lg": "1.5rem", "margin": "1.25rem", "space-md": "1rem", "space-xs": "0.25rem", "gutter": "1rem", "space-xl": "2rem" }, fontFamily: { "body-sm": ["Inter"], "title-md": ["Inter"], "headline-lg": ["Playfair Display"], "label-lg": ["Inter"], "display-lg-mobile": ["Playfair Display"], "display-lg": ["Playfair Display"], "body-md": ["Inter"], "label-sm": ["Inter"], "body-lg": ["Inter"], "label-md": ["Inter"], "headline-md": ["Playfair Display"] }, fontSize: { "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }], "title-md": ["16px", { lineHeight: "24px", fontWeight: "600" }], "headline-lg": ["24px", { lineHeight: "32px", fontWeight: "400" }], "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }], "display-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "400" }], "display-lg": ["36px", { lineHeight: "44px", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "22px", fontWeight: "400" }], "label-sm": ["10px", { lineHeight: "14px", fontWeight: "500" }], "body-lg": ["16px", { lineHeight: "26px", fontWeight: "400" }], "label-md": ["12px", { lineHeight: "16px", fontWeight: "500" }], "headline-md": ["20px", { lineHeight: "28px", fontWeight: "400" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-[22px]">compass_calibration</span><h1 class="font-headline-md text-headline-md text-on-surface font-normal tracking-tight">Home</h1></div><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative w-full min-h-screen px-margin pt-16 pb-24 bg-surface flex flex-col"><div class="flex flex-col w-full pb-6 space-y-6">
+<!-- Step Tracker & Meta Header -->
+<section class="flex flex-col space-y-3 pt-1">
+<div class="flex items-center justify-between text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-1.5 font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Step 4 of 4 • Wants &amp; Objectives</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+<span>~35 min</span>
+</div>
+</div>
+<!-- Editorial Progress Bar (90%) -->
+<div class="w-full h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full transition-all duration-500 ease-out" style="width: 90%;"></div>
+</div>
+<div class="flex items-center justify-between pt-0.5">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-primary text-[14px]">cloud_done</span>
+<span>Changes saved automatically</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-medium">
+        Phase 4 Final
+      </span>
+</div>
+</section>
+<!-- Editorial Heading & Intro Narrative -->
+<header class="flex flex-col space-y-2">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+      Wants &amp; Objectives
+    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+      Translate what excites you into clear job parameters, then commit to your top three actionable objectives.
+    </p>
+</header>
+<!-- PART 1: MY JOB WANTS -->
+<section class="flex flex-col space-y-4">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-on-surface font-semibold">My job wants</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+          5/5 completed
+        </span>
+</div>
+<button class="text-primary font-label-md text-label-md flex items-center gap-0.5 hover:underline focus:outline-none" type="button">
+<span>Framework tips</span>
+<span class="material-symbols-outlined text-[16px]">info</span>
+</button>
+</div>
+<!-- Wants Accordion Stack -->
+<div class="flex flex-col space-y-3.5">
+<!-- WANT 1 (Expanded) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200">
+<!-- Accordion Header -->
+<div class="flex items-start justify-between cursor-pointer" onclick="toggleWantCard(1)">
+<div class="flex items-center gap-2.5">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold flex items-center justify-center">
+              1
+            </span>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Want 1 • Lead Experience</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Primary career synthesis</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[22px] transition-transform duration-200 rotate-180" id="chevron-1">
+            expand_circle_up
+          </span>
+</div>
+<div class="mt-4 flex flex-col space-y-4" id="content-1">
+<!-- Sentence Formula Callout -->
+<div class="bg-surface-container rounded-lg p-3">
+<p class="font-body-sm text-body-sm text-on-surface-variant italic leading-relaxed">
+<span class="font-semibold text-primary not-italic">Formula:</span> “I WANT to be <strong class="text-on-surface not-italic font-semibold">Senior UX / Lead</strong> in a <strong class="text-on-surface not-italic font-semibold">Purpose-driven studio</strong> within <strong class="text-on-surface not-italic font-semibold">Hybrid commute</strong> that has <strong class="text-on-surface not-italic font-semibold">Empathetic leadership</strong> and offers <strong class="text-on-surface not-italic font-semibold">Mentoring &amp; flexibility</strong>.”
+            </p>
+</div>
+<!-- Parameter 1: Role -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-medium flex items-center gap-1">
+<span>1. Role</span>
+<span class="text-primary">*</span>
+</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Weight</span>
+</div>
+<div class="bg-surface-container-low rounded-lg px-3 py-2.5 text-on-surface font-body-md text-body-md">
+              Senior UX Designer / Team Lead
+            </div>
+<!-- Segmented Pill Control -->
+<div class="flex items-center gap-1.5 pt-1">
+<button class="flex-1 py-1.5 rounded-full font-label-sm text-label-sm bg-primary text-on-primary font-semibold text-center transition-colors" type="button">Important</button>
+<button class="flex-1 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-variant text-center transition-colors" type="button">Somewhat</button>
+<button class="flex-1 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-variant text-center transition-colors" type="button">Not vital</button>
+</div>
+</div>
+<!-- Parameter 2: Company Type -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-medium">2. Company Type</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Weight</span>
+</div>
+<div class="bg-surface-container-low rounded-lg px-3 py-2.5 text-on-surface font-body-md text-body-md">
+              Purpose-driven studio or scale-up
+            </div>
+<div class="flex items-center gap-1.5 pt-1">
+<button class="flex-1 py-1.5 rounded-full font-label-sm text-label-sm bg-primary text-on-primary font-semibold text-center transition-colors" type="button">Important</button>
+<button class="flex-1 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-variant text-center transition-colors" type="button">Somewhat</button>
+<button class="flex-1 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-variant text-center transition-colors" type="button">Not vital</button>
+</div>
+</div>
+<!-- Parameter 3: Location & Commute -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-medium">3. Location &amp; Commute</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Weight</span>
+</div>
+<div class="bg-surface-container-low rounded-lg px-3 py-2.5 text-on-surface font-body-md text-body-md">
+              Hybrid (2 days remote, &lt;45 min commute)
+            </div>
+<div class="flex items-center gap-1.5 pt-1">
+<button class="flex-1 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-variant text-center transition-colors" type="button">Important</button>
+<button class="flex-1 py-1.5 rounded-full font-label-sm text-label-sm bg-primary text-on-primary font-semibold text-center transition-colors" type="button">Somewhat</button>
+<button class="flex-1 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-variant text-center transition-colors" type="button">Not vital</button>
+</div>
+</div>
+<!-- Parameter 4: Culture & Mission -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-medium">4. Culture &amp; Mission</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Weight</span>
+</div>
+<div class="bg-surface-container-low rounded-lg px-3 py-2.5 text-on-surface font-body-md text-body-md">
+              Empathetic leadership &amp; learning focus
+            </div>
+<div class="flex items-center gap-1.5 pt-1">
+<button class="flex-1 py-1.5 rounded-full font-label-sm text-label-sm bg-primary text-on-primary font-semibold text-center transition-colors" type="button">Important</button>
+<button class="flex-1 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-variant text-center transition-colors" type="button">Somewhat</button>
+<button class="flex-1 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-variant text-center transition-colors" type="button">Not vital</button>
+</div>
+</div>
+<!-- Parameter 5: Key Benefit / Offering -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface font-medium">5. Key Benefit / Offering</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Weight</span>
+</div>
+<div class="bg-surface-container-low rounded-lg px-3 py-2.5 text-on-surface font-body-md text-body-md">
+              Dedicated mentoring &amp; 4-day work week option
+            </div>
+<div class="flex items-center gap-1.5 pt-1">
+<button class="flex-1 py-1.5 rounded-full font-label-sm text-label-sm bg-primary text-on-primary font-semibold text-center transition-colors" type="button">Important</button>
+<button class="flex-1 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-variant text-center transition-colors" type="button">Somewhat</button>
+<button class="flex-1 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container text-on-surface-variant hover:bg-surface-variant text-center transition-colors" type="button">Not vital</button>
+</div>
+</div>
+</div>
+</article>
+<!-- WANT 2 (Collapsed with Summary Preview) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200">
+<div class="flex items-start justify-between cursor-pointer" onclick="toggleWantCard(2)">
+<div class="flex items-start gap-2.5">
+<span class="w-6 h-6 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold flex items-center justify-center shrink-0 mt-0.5">
+              2
+            </span>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h3 class="font-title-md text-title-md text-on-surface">Want 2</h3>
+<span class="font-label-sm text-label-sm text-primary font-medium">High Match</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-1">
+                Product Strategist • Clean Tech • Remote • Mission-led
+              </p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[22px] transition-transform duration-200" id="chevron-2">
+            expand_more
+          </span>
+</div>
+</article>
+<!-- WANT 3 (Collapsed) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200">
+<div class="flex items-start justify-between cursor-pointer" onclick="toggleWantCard(3)">
+<div class="flex items-start gap-2.5">
+<span class="w-6 h-6 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold flex items-center justify-center shrink-0 mt-0.5">
+              3
+            </span>
+<div class="flex flex-col">
+<h3 class="font-title-md text-title-md text-on-surface">Want 3</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-1">
+                Design System Specialist • Fintech Scale-up • Flexible Hours
+              </p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[22px] transition-transform duration-200" id="chevron-3">
+            expand_more
+          </span>
+</div>
+</article>
+<!-- WANT 4 (Collapsed) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200">
+<div class="flex items-start justify-between cursor-pointer" onclick="toggleWantCard(4)">
+<div class="flex items-start gap-2.5">
+<span class="w-6 h-6 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold flex items-center justify-center shrink-0 mt-0.5">
+              4
+            </span>
+<div class="flex flex-col">
+<h3 class="font-title-md text-title-md text-on-surface">Want 4</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-1">
+                User Research Lead • Healthcare Innovation • London/Hybrid
+              </p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[22px] transition-transform duration-200" id="chevron-4">
+            expand_more
+          </span>
+</div>
+</article>
+<!-- WANT 5 (Collapsed) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200">
+<div class="flex items-start justify-between cursor-pointer" onclick="toggleWantCard(5)">
+<div class="flex items-start gap-2.5">
+<span class="w-6 h-6 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold flex items-center justify-center shrink-0 mt-0.5">
+              5
+            </span>
+<div class="flex flex-col">
+<h3 class="font-title-md text-title-md text-on-surface">Want 5</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 line-clamp-1">
+                Creative Director Track • Social Impact Agency • Collaborative
+              </p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[22px] transition-transform duration-200" id="chevron-5">
+            expand_more
+          </span>
+</div>
+</article>
+</div>
+</section>
+<!-- Editorial Separator Quote -->
+<div class="bg-surface-container-high rounded-xl p-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[28px] shrink-0">flag</span>
+<p class="font-body-sm text-body-sm text-on-surface italic">
+      “Vague ambitions create hesitation. Defining exact conditions and commitments gives your transition velocity.”
+    </p>
+</div>
+<!-- PART 2: TURN WANTS INTO ACTION (3 Objectives) -->
+<section class="flex flex-col space-y-4">
+<div class="flex flex-col space-y-1">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold">
+          Turn wants into action
+        </h3>
+<span class="font-label-sm text-label-sm text-primary font-semibold">
+          3 of 3 active
+        </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Pick up to 3 wants to turn into committed objectives for your career plan.
+      </p>
+</div>
+<!-- Objective Cards List -->
+<div class="flex flex-col space-y-4">
+<!-- Objective 1 -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-3.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-primary flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+            Objective 1
+          </span>
+<!-- Timeframe Segmented Control (1 month active) -->
+<div class="flex items-center bg-surface-container rounded-lg p-0.5">
+<button class="px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">2 wks</button>
+<button class="px-2.5 py-1 rounded font-label-sm text-label-sm bg-primary text-on-primary font-semibold shadow-xs transition-colors" type="button">1 mo</button>
+<button class="px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">3 mos</button>
+</div>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-medium">
+          Commitment timeframe: <span class="text-on-surface font-semibold">In the next 1 month...</span>
+</div>
+<!-- Field: I will... -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface uppercase tracking-wider">I will...</label>
+<div class="bg-surface-container-low rounded-lg p-3 text-on-surface font-body-md text-body-md leading-relaxed">
+            Schedule informational chats with 3 design directors in mission-led climate tech agencies
+          </div>
+</div>
+<!-- Field: So that... -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm font-semibold text-on-surface uppercase tracking-wider">So that...</label>
+<div class="bg-surface-container-low rounded-lg p-3 text-on-surface font-body-md text-body-md leading-relaxed">
+            I understand their hiring needs and culture expectations before applying.
+          </div>
+</div>
+</article>
+<!-- Objective 2 -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-3.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-primary flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+            Objective 2
+          </span>
+<!-- Timeframe Segmented Control (2 weeks active) -->
+<div class="flex items-center bg-surface-container rounded-lg p-0.5">
+<button class="px-2.5 py-1 rounded font-label-sm text-label-sm bg-primary text-on-primary font-semibold shadow-xs transition-colors" type="button">2 wks</button>
+<button class="px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">1 mo</button>
+<button class="px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">3 mos</button>
+</div>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-medium">
+          Commitment timeframe: <span class="text-on-surface font-semibold">In the next 2 weeks...</span>
+</div>
+<!-- Combined summary style -->
+<div class="bg-surface-container-low rounded-lg p-3 space-y-2">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+<strong class="font-semibold text-primary">I will:</strong> Audit my portfolio case studies to highlight mentorship and leadership impact...
+          </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<strong class="font-semibold text-on-surface">So that:</strong> My applications directly align with lead and senior design roles.
+          </p>
+</div>
+</article>
+<!-- Objective 3 -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-3.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-semibold text-primary flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+            Objective 3
+          </span>
+<!-- Timeframe Segmented Control (3 months active) -->
+<div class="flex items-center bg-surface-container rounded-lg p-0.5">
+<button class="px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">2 wks</button>
+<button class="px-2 py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" type="button">1 mo</button>
+<button class="px-2.5 py-1 rounded font-label-sm text-label-sm bg-primary text-on-primary font-semibold shadow-xs transition-colors" type="button">3 mos</button>
+</div>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-medium">
+          Commitment timeframe: <span class="text-on-surface font-semibold">In the next 3 months...</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3 space-y-2">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+<strong class="font-semibold text-primary">I will:</strong> Enrol in a leadership facilitation course...
+          </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<strong class="font-semibold text-on-surface">So that:</strong> I feel confident managing multi-stakeholder design sprints.
+          </p>
+</div>
+</article>
+</div>
+</section>
+<!-- Editorial Reflection / Encouragement Prompt -->
+<div class="bg-surface-container rounded-xl p-4 flex flex-col space-y-2">
+<div class="flex items-center gap-2 text-primary font-semibold font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Clarity Milestone Unlocked</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+      You have articulated concrete parameters for roles that honour both your lifestyle and growth trajectory. These objectives feed directly into your weekly reflection rhythm.
+    </p>
+</div>
+<!-- Bottom CTA Actions (Fixed Height 48px, Editorial Touch Target) -->
+<section class="pt-2 flex items-center gap-3">
+<button class="flex-1 h-12 rounded-lg bg-surface-container-lowest text-primary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-1 active:bg-surface-variant transition-colors shadow-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Back</span>
+</button>
+<button class="flex-[2] h-12 rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-1.5 active:opacity-95 transition-all shadow-sm" type="button">
+<span>Continue</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</section>
+</div>
+<script>
+  function toggleWantCard(id) {
+    const content = document.getElementById('content-' + id);
+    const chevron = document.getElementById('chevron-' + id);
+    if (!content) return;
+    
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      if (chevron) chevron.classList.add('rotate-180');
+    } else {
+      content.classList.add('hidden');
+      if (chevron) chevron.classList.remove('rotate-180');
+    }
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-semibold"><div class="flex items-center justify-around h-16 px-space-xs"><a class="flex flex-col items-center justify-center w-14 h-14 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors relative" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">cottage</span><span class="font-label-sm text-label-sm mt-space-xs text-center">Home</span></a><a class="flex flex-col items-center justify-center w-14 h-14 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors relative" data-path="my-journey" href="#"><span class="material-symbols-outlined text-[22px]">route</span><span class="font-label-sm text-label-sm mt-space-xs text-center">Journey</span></a><a class="flex flex-col items-center justify-center w-14 h-14 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="my-plan" href="#"><span class="material-symbols-outlined text-[22px]">assignment_turned_in</span><span class="font-label-sm text-label-sm mt-space-xs text-center">Plan</span></a><a class="flex flex-col items-center justify-center w-14 h-14 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="insights" href="#"><span class="material-symbols-outlined text-[22px]">lightbulb</span><span class="font-label-sm text-label-sm mt-space-xs text-center">Insights</span></a><a class="flex flex-col items-center justify-center w-14 h-14 rounded-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="profile" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label-sm text-label-sm mt-space-xs text-center">Profile</span></a></div></nav></body></html>

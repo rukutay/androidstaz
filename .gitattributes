@@ -1,0 +1,7 @@
+* text=auto
+# Unix shell script must keep LF; Windows batch files keep CRLF
+client/gradlew text eol=lf
+*.bat text eol=crlf
+*.jar binary
+*.png binary
+*.ttf binary

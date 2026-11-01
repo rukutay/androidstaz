@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sand (#F5F0E8) window background so there is no white flash before Compose draws -->
+    <style name="Theme.CareerExplore" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/sand</item>
+    </style>
+</resources>

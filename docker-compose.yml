@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-career}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env (copy .env.example)}
+      POSTGRES_DB: ${POSTGRES_DB:-career_explore}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - career_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-career} -d ${POSTGRES_DB:-career_explore}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  career_pgdata:

@@ -1,0 +1,28 @@
+# Secrets / local config
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+server/dist/
+server/public/
+# Prisma client is generated: npm run db:generate
+server/src/generated/
+*.log
+
+# Gradle / Kotlin
+.gradle/
+.kotlin/
+build/
+local.properties
+
+# IDE / OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Demo artifacts
+dist/

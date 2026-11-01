@@ -1,0 +1,239 @@
+openapi: 3.0.3
+info:
+  title: Career Explore POC API
+  version: 0.2.0
+  description: >
+    Draft contract, subset of Development Guidelines section 6.5.
+    Auth is a demo stub: the client sends the X-User-Id header returned by /auth/register (localhost only).
+servers:
+  - url: http://localhost:3000/api/v1
+    description: Local machine
+  - url: http://10.0.2.2:3000/api/v1
+    description: From the Android emulator (host alias)
+security:
+  - userId: []
+paths:
+  /health:
+    get:
+      summary: Health check
+      security: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, example: ok }
+  /auth/register:
+    post:
+      summary: Create a demo user (name + email, no password)
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name, email]
+              properties:
+                name: { type: string }
+                email: { type: string, format: email }
+                country: { type: string }
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/User" }
+  /user/me:
+    get:
+      summary: Current user
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/User" }
+  /journey/current:
+    get:
+      summary: Current journey with all step data
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Journey" }
+  /journey:
+    post:
+      summary: Create a new journey (new version)
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Journey" }
+  /journey/{id}/{step}:
+    put:
+      summary: Save a step (interests | best | values | excited)
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+        - name: step
+          in: path
+          required: true
+          schema: { type: string, enum: [interests, best, values, excited] }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/StepData" }
+      responses:
+        "200":
+          description: Saved
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Journey" }
+  /journey/{id}/best/reflect:
+    post:
+      summary: AI-assist mock - returns canned follow-up questions (demo only)
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  questions:
+                    type: array
+                    items: { type: string }
+  /journey/{id}/plan/generate:
+    post:
+      summary: Generate and save a plan (new version v1, v2, ...)
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Plan" }
+  /journey/{id}/plans:
+    get:
+      summary: Plan history (versions, newest first)
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    version: { type: integer }
+                    generatedAt: { type: string, format: date-time }
+  /journey/{id}/plan:
+    get:
+      summary: Current plan
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Plan" }
+  /journey/{id}/plan/export:
+    post:
+      summary: Branded HTML with print styles (save as PDF from the browser)
+      parameters:
+        - { name: id, in: path, required: true, schema: { type: string } }
+      responses:
+        "200":
+          description: HTML document
+          content:
+            text/html:
+              schema: { type: string }
+  /insights/{journeyId}:
+    get:
+      summary: Keyword clustering across interests and excitement items (no AI)
+      parameters:
+        - { name: journeyId, in: path, required: true, schema: { type: string } }
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  keywords:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        word: { type: string }
+                        count: { type: integer }
+                  disclaimer: { type: string }
+  /prompts/daily:
+    get:
+      summary: Today's motivational prompt
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id: { type: string }
+                  text: { type: string }
+                  category: { type: string }
+components:
+  securitySchemes:
+    userId:
+      type: apiKey
+      in: header
+      name: X-User-Id
+  schemas:
+    User:
+      type: object
+      properties:
+        id: { type: string }
+        name: { type: string }
+        email: { type: string, format: email }
+        country: { type: string }
+    StepData:
+      type: object
+      description: >
+        Step payload. Concrete shapes and limits are defined in server/src/schemas/steps.ts (Zod) and mirrored in
+        client/composeApp/src/commonMain/kotlin/dk/careerexplore/poc/domain/Models.kt.
+        interests {items[], topTwo[]}; best {examples[{text, reasons[], tags[]}]}; values {selected[], reflection};
+        excited {excitementItems[], jobWants[{role, company, location, culture, benefit: {text, importance}}],
+        objectives[{timeframe, action, outcome, challenges[], resources[]}]}.
+      additionalProperties: true
+    Journey:
+      type: object
+      properties:
+        id: { type: string }
+        version: { type: integer }
+        status: { type: string }
+        updatedAt: { type: string, format: date-time }
+        steps:
+          type: object
+          additionalProperties: { $ref: "#/components/schemas/StepData" }
+    Plan:
+      type: object
+      properties:
+        journeyId: { type: string }
+        version: { type: integer }
+        generatedAt: { type: string, format: date-time }
+        data:
+          type: object
+          additionalProperties: true

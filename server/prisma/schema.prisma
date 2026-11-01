@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// POC data model: simplified version of Development Guidelines 6.4.
+// Step payloads are stored as JSON (shapes validated by Zod in src/schemas).
+model User {
+  id        String    @id @default(uuid())
+  name      String
+  email     String    @unique
+  country   String?
+  createdAt DateTime  @default(now())
+  journeys  Journey[]
+}
+
+model Journey {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  version   Int
+  status    String   @default("in_progress")
+  interests Json?
+  best      Json?
+  values    Json?
+  excited   Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  plans     Plan[]
+
+  @@unique([userId, version])
+}
+
+model Plan {
+  id          String   @id @default(uuid())
+  journeyId   String
+  journey     Journey  @relation(fields: [journeyId], references: [id], onDelete: Cascade)
+  version     Int
+  data        Json
+  generatedAt DateTime @default(now())
+
+  @@unique([journeyId, version])
+}
+
+model DailyPrompt {
+  id       String  @id @default(uuid())
+  text     String
+  category String
+  isActive Boolean @default(true)
+}
