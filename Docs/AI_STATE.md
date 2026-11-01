@@ -5,7 +5,7 @@ Updated: 2026-11-01
 Android POC is **ready for testing in Android Studio**: all 10 core screens + Insights, Coach Connect and Profile are built from the Stitch designs and run against the local server. Next is user review on the emulator.
 
 ## Current artifact
-`C:\career-explore-poc` — client androidApp versionName 0.3.0 (versionCode 2), server 0.1.0 (package.json). Not committed (no git repo).
+`C:\career-explore-poc` — client androidApp versionName 0.3.0 (versionCode 2), server 0.1.0 (package.json). Git: https://github.com/rukutay/androidstaz (branch `main`, initial commit 98b2d6a, 2026-11-01). Local DB and emulator app data were cleared before the first commit (only the 12 seed prompts remain).
 
 ## Verified (2026-11-01)
 - server: `npm run build` OK; `npm test` 7/7 passed (Vitest + inject, local Docker Postgres)
@@ -18,7 +18,7 @@ Android POC is **ready for testing in Android Studio**: all 10 core screens + In
 - DRAFT content listed in `Docs/ui/UI_NOTES.md` needs Career Explore review.
 - Emulator with host GPU produced black screenshots; `-gpu swiftshader_indirect` worked (Android Studio's own emulator window may be fine).
 - npm reports unapproved install scripts (esbuild, prisma, @prisma/engines); everything worked without them.
-- Create git repo (Azure DevOps `dev.azure.com/aterima`) and commit — needs user's go-ahead.
+- Repo is public on GitHub: never commit `.env`, `client/local.properties`, real user data or screenshots with personal data.
 
 ## Next step
 User opens `client/` in Android Studio, runs `androidApp` on an emulator with the server running, and reviews the flow; collect UI feedback.

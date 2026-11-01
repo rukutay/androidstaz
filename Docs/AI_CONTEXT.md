@@ -31,6 +31,7 @@ Full list in `Docs/ARCHITECTURE.md` (§1). In: 10 screens (onboarding, profile, 
 - 2026-11-01 — UI built from Google Stitch designs (`Docs/ui/stitch/`); deviations (no stock photos, no invented coach credentials/testimonials, data-backed insights only) in `Docs/ui/UI_NOTES.md`.
 - 2026-11-01 — Drafts may be incomplete: server accepts empty My Best text and empty objective action/outcome (auto-save); the plan generator skips them.
 - 2026-11-01 — No navigation/ViewModel libraries: own `Navigator` (back stack) + `AppState` (Compose state) + `AutoSaver` (30 s + on leave). Portrait only.
+- 2026-11-01 — Repository on GitHub `rukutay/androidstaz` (user's choice instead of Azure DevOps); commits as `rukutay <rukutay@users.noreply.github.com>` (repo-local config). Prisma client in `server/src/generated` is not committed (`npm run db:generate`).
 - 2026-11-01 — Fonts Inter + Playfair Display bundled as Compose resources (OFL, licences in `client/composeApp/licenses/`); icons from material-icons-extended 1.7.3 (frozen upstream).
 
 ## Patterns and pitfalls
